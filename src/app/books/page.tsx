@@ -1,8 +1,7 @@
-import Image from "next/image";
-import { BookCard } from "@/components/BookCard";
-import { login } from "@/libs/firebase";
-import { NewBookCard } from "@/components/NewBook";
 import { bookListContainer } from "./Books.css";
+import { BookCard } from "@/components/BookCard";
+import { NewBookCard } from "@/components/NewBookCard";
+
 
 export default function Books() {
   const books = [

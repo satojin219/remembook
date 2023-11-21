@@ -1,7 +1,7 @@
 "use client";
 import Image from "next/image";
 import Link from "next/link";
-import { container, title } from "./newBook.css";
+import { container, title } from "./newBookCard.css";
 
 export const NewBookCard: React.FC = () => {
   return (

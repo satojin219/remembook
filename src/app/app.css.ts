@@ -40,3 +40,25 @@ globalStyle("a", {
   cursor: "pointer",
   textDecoration: "none",
 });
+globalStyle("input", {
+  margin: 0,
+  padding: 0,
+  background: "#fff",
+  border: "none",
+  borderRadius: 5,
+  outline: "none",
+  WebkitAppearance: "none",
+  MozAppearance: "none",
+  appearance: "none",
+});
+globalStyle("textarea", {
+  margin: 0,
+  padding: 0,
+  background: "#fff",
+  border: "none",
+  borderRadius: 5,
+  outline: "none",
+  WebkitAppearance: "none",
+  MozAppearance: "none",
+  appearance: "none",
+});
