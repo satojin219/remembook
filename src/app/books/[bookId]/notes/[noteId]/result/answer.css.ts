@@ -11,7 +11,9 @@ export const container = style({
   fontWeight: "bold",
   borderRadius: 20,
   background: "#fff",
-  textAlign: "center",
+  display: "flex",
+  flexDirection: "column",
+  justifyContent: "center",
 });
 
 export const score = style({
