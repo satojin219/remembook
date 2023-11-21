@@ -1,12 +1,10 @@
 "use client";
-import React, { useEffect, useState } from "react";
 import axios from "axios";
 import useSWR from "swr";
 import { bookListContainer } from "./Books.css";
 import { useAuth } from "@/components/Auth";
 import { BookCard } from "@/components/BookCard";
 import { NewBookCard } from "@/components/NewBookCard";
-import { auth } from "@/libs/firebase";
 import { Book } from "@/types";
 
 const fetcher = async (url: string): Promise<Book[]> => {
