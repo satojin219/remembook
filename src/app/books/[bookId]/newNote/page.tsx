@@ -22,7 +22,7 @@ export default function NewNote() {
       <button
         className={button}
         onClick={() => {
-          trigger({ id: uuidv4(), note, queue, answer: "" });
+          trigger({ id: uuidv4(), note, queue, summary: "" });
         }}
       >
         保存する

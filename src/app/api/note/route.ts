@@ -7,7 +7,7 @@ type RequestBodyType = {
   id: string;
   note: string;
   queue: string;
-  answer: string;
+  summary: string;
 };
 
 export async function POST(request: NextRequest) {
@@ -22,7 +22,7 @@ export async function POST(request: NextRequest) {
     id,
     note,
     queue,
-    answer: "",
+    summary: "",
   };
   setDoc(ref, book).then((res) => console.log(res));
   return NextResponse.json({
