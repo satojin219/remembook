@@ -1,21 +1,13 @@
 "use client";
-import axios from "axios";
-import useSWR from "swr";
 import { bookListContainer } from "./Books.css";
 import { useAuth } from "@/components/Auth";
 import { BookCard } from "@/components/BookCard";
 import { NewBookCard } from "@/components/NewBookCard";
-import { Book } from "@/types";
+import { useGetBooks } from "@/hooks/useGetBooks";
 
-const fetcher = async (url: string): Promise<Book[]> => {
-  return axios.get(url).then((res) => {
-    return res.data.data;
-  });
-};
 export default function Books() {
   const user = useAuth();
-  const { data: books } = useSWR<Book[]>(`/api/books/getBooks/${user?.id}`, fetcher);
-
+  const { data: books } = useGetBooks(user?.id!);
   return (
     <main>
       <div className={bookListContainer}>

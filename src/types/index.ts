@@ -19,6 +19,7 @@ export type Book = {
 };
 
 export type Note = {
+  id: string;
   note: string;
-  question: string;
+  queue: string;
 };
