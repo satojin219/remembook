@@ -1,7 +1,7 @@
 import axios from "axios";
 import { useRouter } from "next/navigation";
-import { Note } from "@/types";
 import useSWRMutation from "swr/mutation";
+import { Note } from "@/types";
 
 async function updateNote(url: string, { arg }: { arg: Note }) {
   return axios.post(url, {
