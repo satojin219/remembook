@@ -1,31 +1,18 @@
-import { doc, setDoc } from "firebase/firestore";
+import { collection, doc, getDoc, getDocs } from "firebase/firestore";
 import { NextRequest, NextResponse } from "next/server";
 import { db } from "@/libs/firebase";
-import { Note } from "@/types";
 
-type RequestBodyType = {
-  id: string;
-  note: string;
-  queue: string;
-  summary: string;
-};
-
-export async function POST(request: NextRequest) {
+export async function GET(request: NextRequest) {
   const searchParams = request.nextUrl.searchParams;
   const userId = searchParams.get("userId");
   const bookId = searchParams.get("bookId");
-  const { id, note, queue } = (await request.json()) as RequestBodyType;
+  const noteId = searchParams.get("noteId");
 
-  const ref = doc(db, "users", userId!, "books", bookId!, "notes", id);
-
-  const book: Note = {
-    id,
-    note,
-    queue,
-    summary: "",
-  };
-  setDoc(ref, book).then((res) => console.log(res));
+  const ref = doc(db, "users", userId!, "books", bookId!, "notes", noteId!);
+  const querySnapshot = await getDoc(ref);
+  const data = querySnapshot.data();
   return NextResponse.json({
+    data,
     status: 200,
   });
 }

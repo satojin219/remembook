@@ -12,5 +12,5 @@ async function registerNote(url: string, { arg }: { arg: Note }) {
 }
 
 export const useRegisterNote = (userId: string, bookId: string) => {
-  return useSWRMutation(`/api/note?userId=${userId}&bookId=${bookId}`, registerNote);
+  return useSWRMutation(`/api/notes/newNote?userId=${userId}&bookId=${bookId}`, registerNote);
 };
