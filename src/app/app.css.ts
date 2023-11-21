@@ -35,3 +35,8 @@ globalStyle("button", {
   padding: 0,
   appearance: "none",
 });
+globalStyle("a", {
+  color: "#404040",
+  cursor: "pointer",
+  textDecoration: "none",
+});
