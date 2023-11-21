@@ -17,7 +17,11 @@ export const AuthProvider = ({ children }: { children: ReactNode }) => {
   const router = useRouter();
 
   useEffect(() => {
-    router.push("/books");
+    if (!user) {
+      router.push("/login");
+    } else {
+      router.push("/books");
+    }
   }, [user, router]);
 
   useEffect(() => {

@@ -3,12 +3,14 @@ import { useState } from "react";
 import { v4 as uuidv4 } from "uuid";
 import { button, inputContainer } from "./newBook.css";
 import { useAuth } from "@/components/Auth";
+import { useRouter } from "next/navigation";
 
 const NewBook = () => {
   const [title, setTitle] = useState<string>();
   const [author, setAuthor] = useState<string>();
   const user = useAuth();
-  console.log("user", user);
+  const router = useRouter();
+
   const onClick = () => {
     fetch(`/api/books/newBook`, {
       method: "POST",
@@ -22,7 +24,7 @@ const NewBook = () => {
         url: "",
         userId: user?.id,
       }),
-    });
+    }).then(() => router.push("/books"));
   };
   return (
     <main>
