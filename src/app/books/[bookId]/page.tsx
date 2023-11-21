@@ -24,7 +24,7 @@ export default function Books() {
         <div>
           <div className={noteContainer}>
             {notes?.map((note, index) => (
-              <Link className={noteStyle} key={note.id} href={`/books/${book?.id}/${note.id}`}>
+              <Link className={noteStyle} key={note.id} href={`/books/${book?.id}/notes/${note.id}`}>
                 {index + 1 + ". " + note.note}
               </Link>
             ))}

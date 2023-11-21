@@ -7,6 +7,7 @@ async function registerNote(url: string, { arg }: { arg: Note }) {
     id: arg.id,
     note: arg.note,
     queue: arg.queue,
+    answer: "",
   });
 }
 

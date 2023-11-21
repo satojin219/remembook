@@ -22,4 +22,5 @@ export type Note = {
   id: string;
   note: string;
   queue: string;
+  answer: string;
 };
