@@ -1,7 +1,7 @@
 import { style } from "@vanilla-extract/css";
 
 export const container = style({
-  maxWidth: 240,
+  minWidth: 240,
   background: "#fff",
   borderRadius: 25,
   padding: 16,

@@ -1,6 +1,7 @@
 import { style } from "@vanilla-extract/css";
 
 export const container = style({
+  minWidth: 240,
   background: "#fff",
   borderRadius: 25,
   padding: 16,
@@ -12,8 +13,7 @@ export const container = style({
   textAlign: "center",
 });
 export const title = style({
-  minWidth: 240,
-  fontSize: 20,
+  fontSize: 16,
   fontWeight: "bolder",
   display: "-webkit-box",
   WebkitLineClamp: 2,
