@@ -18,7 +18,7 @@ export default function Books() {
         <p>{book?.title!}</p>
         <h2>著者名</h2>
         <p>{book?.author!}</p>
-        <Link className={button} href={`/books/newNote`}>
+        <Link className={button} href={`/books/${book?.id}/newNote`}>
           ノートを書く
         </Link>
         <div>

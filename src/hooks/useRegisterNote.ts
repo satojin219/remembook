@@ -1,6 +1,7 @@
 import axios from "axios";
 import useSWRMutation from "swr/mutation";
 import { Note } from "@/types";
+import { useRouter } from "next/navigation";
 
 async function registerNote(url: string, { arg }: { arg: Note }) {
   return axios.post(url, {
@@ -12,5 +13,8 @@ async function registerNote(url: string, { arg }: { arg: Note }) {
 }
 
 export const useRegisterNote = (userId: string, bookId: string) => {
-  return useSWRMutation(`/api/notes/newNote?userId=${userId}&bookId=${bookId}`, registerNote);
+  const router = useRouter();
+  return useSWRMutation(`/api/notes/newNote?userId=${userId}&bookId=${bookId}`, registerNote, {
+    onSuccess: () => router.push(`/books/${bookId}`),
+  });
 };

@@ -10,13 +10,13 @@ export default function Note() {
   const params = useParams();
   const user = useAuth();
   const { data: note } = useGetNote(user?.id!, params.bookId as string, params.noteId as string);
-  const { data, isLoading } = useCompareSummary(note?.note!, note?.summary!);
+  const { data, isLoading, error } = useCompareSummary(note?.note!, note?.summary!);
   return (
     <div>
       <h1 className={queue}>{note?.queue}</h1>
       <div className={container}>
         {isLoading && <ReactLoading type="spin" color="#8AD596" height={"20%"} width={"20%"} />}
-        {data && data > 0 && (
+        {!error && data && data >= 0 && (
           <div>
             <h1 className={score}>{data}</h1>
             {data > 80 && <h2>よくできました！</h2>}

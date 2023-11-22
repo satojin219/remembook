@@ -14,6 +14,8 @@ export const container = style({
   display: "flex",
   flexDirection: "column",
   justifyContent: "center",
+  alignItems: "center",
+  textAlign: "center",
 });
 
 export const score = style({
