@@ -24,8 +24,7 @@ export async function GET(request: NextRequest) {
   });
 
   const similarityScore = completion.choices[0]?.message?.content;
-  console.log(completion.choices[0]?.message);
-  const data = JSON.parse(similarityScore!)["similarity_score"];
+  const data = await JSON.parse(similarityScore!)["similarity_score"];
   return NextResponse.json({
     data,
     status: 200,
